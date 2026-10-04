@@ -7,162 +7,273 @@
 <title>Umrah Checklist — Neo Tactile</title>
 <style>
 :root{
-  --bg:#0b131e;--bg2:#152433;--glass:#b8d7e31f;--glass2:#dcecf64a;--line:#dff8ff2e;
-  --text:#f6fbff;--muted:#a9b8c5;--blue:#3d7cff;--blue2:#2869ff;--cyan:#19f1f2;
-  --white:#edf4f8;--ink:#1d2d3b;--soft:#cad8e2;
+  --bg:#0b131e;--glass:#b8d7e31f;--text:#f6fbff;--muted:#a9b8c5;--blue:#3d7cff;--cyan:#19f1f2;
+  --white:#edf4f8;--ink:#1d2d3b;--danger:#ff5d76;
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Noto Sans Thai",sans-serif;background:#0b1119;color:var(--text)}
 body{overflow-x:hidden;background:
   radial-gradient(70% 45% at 7% 0%,rgba(187,225,243,.82),transparent 55%),
   radial-gradient(45% 35% at 29% 42%,rgba(58,116,153,.30),transparent 60%),
-  linear-gradient(160deg,#162433 0%,#0b121d 48%,#101a27 100%);
-}
+  linear-gradient(160deg,#162433 0%,#0b121d 48%,#101a27 100%)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.6;background:
   radial-gradient(circle at 27% 26%,#08121d 0 4%,transparent 12%),
   radial-gradient(circle at 30% 31%,rgba(0,0,0,.58) 0 2%,transparent 10%),
   radial-gradient(circle at 36% 46%,rgba(2,8,14,.75) 0 3%,transparent 11%),
-  radial-gradient(circle at 25% 62%,rgba(1,8,14,.7) 0 3%,transparent 12%);
-  filter:blur(11px)
-}
+  radial-gradient(circle at 25% 62%,rgba(1,8,14,.7) 0 3%,transparent 12%);filter:blur(11px)}
 .stage{width:min(100vw,1050px);min-height:100dvh;margin:auto;position:relative;display:grid;grid-template-columns:61% 35%;gap:4%;padding:4.5% 2.5% 5%;overflow:hidden}
 .stage::after{content:"";position:absolute;left:-10%;top:-4%;width:52%;height:18%;background:#bdefff;filter:blur(80px);opacity:.43;transform:rotate(-8deg);pointer-events:none}
 .panel{position:relative;min-height:91dvh;border-radius:54px;padding:5.3% 5.6%;background:
   linear-gradient(153deg,rgba(215,239,250,.32),rgba(132,178,203,.18) 42%,rgba(84,121,145,.22) 68%,rgba(112,165,191,.16));
-  border:1px solid rgba(225,246,255,.26);
-  box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset -1px -1px 0 rgba(63,101,128,.18),0 28px 55px rgba(0,0,0,.42);
-  backdrop-filter:blur(34px) saturate(135%);
-  overflow:hidden;
-}
-.panel::before{content:"";position:absolute;inset:-2px;border-radius:56px;padding:2px;
-  background:conic-gradient(from 180deg,transparent 0 52%,rgba(21,237,255,0) 58%,#19efff 65%,#2fe8ff 72%,transparent 78% 100%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;animation:edgeSpin 8s linear infinite;opacity:.85;pointer-events:none
-}
+  border:1px solid rgba(225,246,255,.26);box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset -1px -1px 0 rgba(63,101,128,.18),0 28px 55px rgba(0,0,0,.42);
+  backdrop-filter:blur(34px) saturate(135%);overflow:hidden}
+.panel::before{content:"";position:absolute;inset:-2px;border-radius:56px;padding:2px;background:conic-gradient(from 180deg,transparent 0 52%,rgba(21,237,255,0) 58%,#19efff 65%,#2fe8ff 72%,transparent 78% 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:edgeSpin 8s linear infinite;opacity:.85;pointer-events:none}
 .panel::after{content:"";position:absolute;right:-14%;bottom:-7%;width:52%;height:22%;border-radius:50%;background:#03f0ee;filter:blur(45px);opacity:.35;animation:pulseGlow 3.8s ease-in-out infinite alternate;pointer-events:none}
 .panel>*{position:relative;z-index:2}
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:9%}
 .brand{display:flex;align-items:center;gap:9px;color:#06101a;font-weight:900;font-size:clamp(12px,2.1vw,25px)}
 .avatar{width:34px;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#55ddf2,#3f74ff);box-shadow:0 8px 20px rgba(5,44,85,.35),inset 0 1px 0 rgba(255,255,255,.75);display:grid;place-items:center;color:#fff;font-size:12px}
-.menu{width:36px;height:30px;display:grid;gap:4px;align-content:center;opacity:.55}.menu i{display:block;height:3px;border-radius:5px;background:#dbeaf4;box-shadow:0 1px 2px #0004}
+.menu{width:36px;height:30px;display:grid;gap:4px;align-content:center;opacity:.55;cursor:pointer}.menu i{display:block;height:3px;border-radius:5px;background:#dbeaf4;box-shadow:0 1px 2px #0004}
 .segment{display:grid;grid-template-columns:1fr 1fr;gap:7%;margin-bottom:7%}
 .neo-btn{border:0;border-radius:27px;padding:16px 10px;font-weight:900;font-size:clamp(11px,1.8vw,19px);cursor:pointer;transition:.2s}
 .neo-btn.off{color:#243340;background:linear-gradient(145deg,#f6f9fb,#d9e3ea);box-shadow:12px 15px 24px rgba(5,17,28,.24),inset 1px 1px 0 #fff,inset -2px -2px 5px rgba(143,164,177,.22)}
 .neo-btn.on{color:#fff;background:linear-gradient(145deg,#4384ff,#2d68f9);box-shadow:12px 17px 30px rgba(20,69,174,.42),inset 0 1px 0 rgba(255,255,255,.5),0 0 28px rgba(60,132,255,.25)}
 .card-white{border-radius:28px;background:linear-gradient(150deg,rgba(249,252,254,.96),rgba(224,235,242,.93));color:var(--ink);box-shadow:0 17px 31px rgba(0,15,28,.32),inset 0 1px 0 #fff}
-.trip{padding:18px 20px;margin-bottom:7%}.trip-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.trip h2{font-size:clamp(12px,1.8vw,19px);margin:0}.chev{font-size:26px;line-height:1}.trip-sub{margin-top:14px;padding:11px 13px;border-radius:18px;background:linear-gradient(145deg,#e9f0f5,#d8e2e9);color:#8796a1;font-weight:700;font-size:clamp(9px,1.35vw,13px);box-shadow:inset 0 4px 8px rgba(104,126,140,.08)}
+.trip{padding:18px 20px;margin-bottom:7%;cursor:pointer;transition:.2s}.trip:active{transform:scale(.99)}
+.trip-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.trip h2{font-size:clamp(12px,1.8vw,19px);margin:0}.chev{font-size:26px;line-height:1}
+.trip-sub{margin-top:14px;padding:11px 13px;border-radius:18px;background:linear-gradient(145deg,#e9f0f5,#d8e2e9);color:#6f8290;font-weight:800;font-size:clamp(9px,1.35vw,13px);box-shadow:inset 0 4px 8px rgba(104,126,140,.08)}
 .controls{background:linear-gradient(160deg,rgba(4,17,30,.78),rgba(15,35,49,.86));border-radius:25px;padding:13px 14px;display:grid;grid-template-columns:repeat(4,1fr) 1.45fr;align-items:center;gap:9px;margin-bottom:7%;box-shadow:0 15px 28px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.08)}
-.round{aspect-ratio:1;border:0;border-radius:50%;background:linear-gradient(145deg,#9cb4c5,#6d8495);color:#eaf4fb;font-weight:900;box-shadow:5px 7px 13px #0005,inset 0 1px 0 #dceaf4;cursor:pointer}
+.round{aspect-ratio:1;border:0;border-radius:50%;background:linear-gradient(145deg,#9cb4c5,#6d8495);color:#eaf4fb;font-weight:900;box-shadow:5px 7px 13px #0005,inset 0 1px 0 #dceaf4;cursor:pointer}.round.active{background:linear-gradient(145deg,#4a89ff,#2767ff);box-shadow:0 0 18px #2a75ff88,inset 0 1px 0 #fff8}
 .orbit{aspect-ratio:1;border-radius:50%;display:grid;place-items:center;position:relative;isolation:isolate;color:#52f5f6;font-weight:900;cursor:pointer}
-.orbit::before,.orbit::after{content:"";position:absolute;border-radius:50%;border:4px solid transparent;z-index:-1}
-.orbit::before{inset:0;border-top-color:#28f5f1;border-right-color:#28f5f1;border-bottom-color:#28f5f1;box-shadow:0 0 14px #16eaf5, inset 0 0 12px #16eaf5;animation:spin 2.7s linear infinite}
-.orbit::after{inset:8px;border-top-color:#29f5f2;border-right-color:#29f5f2;box-shadow:0 0 9px #1eeef4;animation:spin 1.7s linear infinite reverse}
-.progress-box{padding:16px 19px;margin-bottom:7%}
-.progress-top{display:flex;align-items:end;justify-content:space-between;gap:8px}.progress-top b{font-size:clamp(22px,4.2vw,45px);line-height:1}.progress-top span{font-size:10px;color:#718391;font-weight:800}
-.track{height:7px;border-radius:10px;background:#cbd8e1;margin-top:11px;overflow:hidden;box-shadow:inset 0 1px 2px #7991a44a}.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3e72ff,#17f1ed);box-shadow:0 0 12px #22e8ff;transition:.35s}
-.list-card{padding:15px 14px 10px;max-height:36vh;overflow:auto;scrollbar-width:none}.list-card::-webkit-scrollbar{display:none}
-.list-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.list-title b{font-size:clamp(11px,1.6vw,16px)}.list-title button{border:0;border-radius:12px;background:#e2eaf0;color:#71808c;font-weight:800;padding:7px 9px}
-.item{display:grid;grid-template-columns:25px 1fr auto;gap:9px;align-items:center;padding:10px 7px;border-top:1px solid #cbd8e175;cursor:pointer}.item:first-of-type{border-top:0}
-.check{width:24px;height:24px;border-radius:50%;background:linear-gradient(145deg,#eaf1f5,#cbd9e2);box-shadow:inset 0 2px 5px #8ea3b339;display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px}.item.done .check{background:linear-gradient(145deg,#4b87ff,#1fe7e8);box-shadow:0 0 10px #27ddf0}.item.done .itxt{text-decoration:line-through;opacity:.55}.itxt{font-size:clamp(9px,1.3vw,13px);font-weight:900}.tag{font-size:8px;color:#788a98;background:#dbe6ec;border-radius:8px;padding:5px 6px}
-.filters{display:flex;gap:6px;overflow:auto;scrollbar-width:none;margin:10px 0 6px}.filters::-webkit-scrollbar{display:none}.chip{border:0;border-radius:14px;padding:7px 9px;white-space:nowrap;background:#cddae3;color:#607381;font-size:9px;font-weight:900}.chip.active{background:#4b7fff;color:#fff;box-shadow:0 5px 14px #326cff4a}
-.rail{padding-top:7%;position:relative;z-index:2}
-.rail h1{font-size:clamp(27px,4.3vw,49px);line-height:.95;margin:0 0 8%}.rail .subhead{font-size:clamp(9px,1.25vw,13px);color:#b7c4cf;margin-bottom:7%}
-.rpill{height:54px;border-radius:29px;background:linear-gradient(145deg,rgba(121,151,173,.38),rgba(65,88,106,.42));border:1px solid rgba(224,240,250,.20);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 14px 28px #0004;display:flex;align-items:center;gap:10px;padding:0 15px;margin-bottom:10%;color:#c4d0da;font-weight:800;font-size:clamp(9px,1.3vw,14px);backdrop-filter:blur(18px)}
-.rdot{width:28px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#eef5fa,#b7c8d5);color:#6e8190;box-shadow:0 4px 10px #0004,inset 0 1px 0 #fff;font-size:12px}
-.spec{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center;margin:8% 0;color:#e3ecf2;font-weight:900;font-size:clamp(9px,1.3vw,14px)}
-.swatch{width:58px;aspect-ratio:1;border-radius:50%;box-shadow:0 13px 24px #0005,inset 0 1px 0 #ffffff70}.swatch.blue{background:#3d7cff}.swatch.gray{background:#71879a}
-.feature{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center;margin:10% 0;color:#dde7ed;font-size:clamp(9px,1.25vw,13px);font-weight:800;line-height:1.2}
-.ficon{width:58px;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#97acbd,#64798a);border:3px solid #d7e5ee;display:grid;place-items:center;box-shadow:0 14px 25px #0005,inset 0 1px 0 #fff;color:#ecf5fb;font-size:19px}
+.orbit::before,.orbit::after{content:"";position:absolute;border-radius:50%;border:4px solid transparent;z-index:-1}.orbit::before{inset:0;border-top-color:#28f5f1;border-right-color:#28f5f1;border-bottom-color:#28f5f1;box-shadow:0 0 14px #16eaf5,inset 0 0 12px #16eaf5;animation:spin 2.7s linear infinite}.orbit::after{inset:8px;border-top-color:#29f5f2;border-right-color:#29f5f2;box-shadow:0 0 9px #1eeef4;animation:spin 1.7s linear infinite reverse}
+.laser-off .panel::before,.laser-off .panel::after,.laser-off .orbit::before,.laser-off .orbit::after,.laser-off .spinner::before{animation-play-state:paused;opacity:.18}
+.progress-box{padding:16px 19px;margin-bottom:7%}.progress-top{display:flex;align-items:end;justify-content:space-between;gap:8px}.progress-top b{font-size:clamp(22px,4.2vw,45px);line-height:1}.progress-top span{font-size:10px;color:#718391;font-weight:800}.track{height:7px;border-radius:10px;background:#cbd8e1;margin-top:11px;overflow:hidden;box-shadow:inset 0 1px 2px #7991a44a}.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3e72ff,#17f1ed);box-shadow:0 0 12px #22e8ff;transition:.35s}
+.list-card{padding:15px 14px 10px;max-height:36vh;overflow:auto;scrollbar-width:none}.list-card::-webkit-scrollbar{display:none}.list-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.list-title b{font-size:clamp(11px,1.6vw,16px)}.list-title button{border:0;border-radius:12px;background:#e2eaf0;color:#71808c;font-weight:800;padding:7px 9px;cursor:pointer}
+.item{display:grid;grid-template-columns:25px 1fr auto;gap:9px;align-items:center;padding:10px 7px;border-top:1px solid #cbd8e175;cursor:pointer}.item:first-of-type{border-top:0}.check{width:24px;height:24px;border-radius:50%;background:linear-gradient(145deg,#eaf1f5,#cbd9e2);box-shadow:inset 0 2px 5px #8ea3b339;display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;cursor:pointer}.item.done .check{background:linear-gradient(145deg,#4b87ff,#1fe7e8);box-shadow:0 0 10px #27ddf0}.item.done .itxt{text-decoration:line-through;opacity:.55}.itxt{font-size:clamp(9px,1.3vw,13px);font-weight:900}.taskmeta{display:flex;gap:5px;align-items:center}.tag,.note-dot{font-size:8px;color:#788a98;background:#dbe6ec;border-radius:8px;padding:5px 6px}.note-dot{background:#d7f6f3;color:#168e8d}
+.filters{display:flex;gap:6px;overflow:auto;scrollbar-width:none;margin:10px 0 6px}.filters::-webkit-scrollbar{display:none}.chip{border:0;border-radius:14px;padding:7px 9px;white-space:nowrap;background:#cddae3;color:#607381;font-size:9px;font-weight:900;cursor:pointer}.chip.active{background:#4b7fff;color:#fff;box-shadow:0 5px 14px #326cff4a}
+.rail{padding-top:7%;position:relative;z-index:2}.rail h1{font-size:clamp(27px,4.3vw,49px);line-height:.95;margin:0 0 8%}.rail .subhead{font-size:clamp(9px,1.25vw,13px);color:#b7c4cf;margin-bottom:7%}
+.rpill{min-height:54px;border-radius:29px;background:linear-gradient(145deg,rgba(121,151,173,.38),rgba(65,88,106,.42));border:1px solid rgba(224,240,250,.20);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 14px 28px #0004;display:flex;align-items:center;gap:10px;padding:11px 15px;margin-bottom:10%;color:#c4d0da;font-weight:800;font-size:clamp(9px,1.3vw,14px);backdrop-filter:blur(18px)}.rdot{width:28px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#eef5fa,#b7c8d5);color:#6e8190;box-shadow:0 4px 10px #0004,inset 0 1px 0 #fff;font-size:12px;flex:0 0 auto}
+.spec{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center;margin:8% 0;color:#e3ecf2;font-weight:900;font-size:clamp(9px,1.3vw,14px)}.swatch{width:58px;aspect-ratio:1;border-radius:50%;box-shadow:0 13px 24px #0005,inset 0 1px 0 #ffffff70}.swatch.blue{background:#3d7cff}.swatch.gray{background:#71879a}
+.feature{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center;margin:10% 0;color:#dde7ed;font-size:clamp(9px,1.25vw,13px);font-weight:800;line-height:1.2}.ficon{width:58px;aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#97acbd,#64798a);border:3px solid #d7e5ee;display:grid;place-items:center;box-shadow:0 14px 25px #0005,inset 0 1px 0 #fff;color:#ecf5fb;font-size:19px}
 .spinner{width:58px;aspect-ratio:1;border-radius:50%;position:relative;display:grid;place-items:center;color:#dceaf2}.spinner::before{content:"";position:absolute;inset:5px;border-radius:50%;background:conic-gradient(#19f1f2 0 18%,transparent 18% 31%,#19f1f2 31% 41%,transparent 41% 62%,#19f1f2 62% 75%,transparent 75%);mask:radial-gradient(circle,transparent 0 48%,#000 49%);animation:spin 1.4s linear infinite;filter:drop-shadow(0 0 5px #14eff8)}
-.micro{margin-top:12%;color:#98aab8;font-size:clamp(8px,1.2vw,12px);margin-bottom:6%}.micro-card{border-radius:28px;padding:14px 16px;background:linear-gradient(145deg,#f4f7f9,#d9e4ea);color:#8795a0;box-shadow:0 18px 30px #0004,inset 0 1px 0 #fff;font-size:clamp(8px,1.2vw,12px)}
-.notify{margin-top:8%;height:54px;border-radius:27px;background:linear-gradient(145deg,rgba(120,150,173,.38),rgba(73,96,113,.42));border:1px solid rgba(229,244,251,.18);display:flex;align-items:center;gap:10px;padding:0 14px;box-shadow:0 13px 26px #0004;color:#eef6fa;font-weight:900;font-size:clamp(9px,1.3vw,14px)}.cyan-dot{width:29px;aspect-ratio:1;border-radius:50%;background:#2fece8;box-shadow:0 0 15px #24ebef;display:grid;place-items:center;color:white}
+.micro{margin-top:12%;color:#98aab8;font-size:clamp(8px,1.2vw,12px);margin-bottom:6%}.micro-card{border-radius:28px;padding:14px 16px;background:linear-gradient(145deg,#f4f7f9,#d9e4ea);color:#5f7483;box-shadow:0 18px 30px #0004,inset 0 1px 0 #fff;font-size:clamp(8px,1.2vw,12px);cursor:pointer;font-weight:900}
+.notify{margin-top:8%;min-height:54px;border-radius:27px;background:linear-gradient(145deg,rgba(120,150,173,.38),rgba(73,96,113,.42));border:1px solid rgba(229,244,251,.18);display:flex;align-items:center;gap:10px;padding:11px 14px;box-shadow:0 13px 26px #0004;color:#eef6fa;font-weight:900;font-size:clamp(9px,1.3vw,14px)}.cyan-dot{width:29px;aspect-ratio:1;border-radius:50%;background:#2fece8;box-shadow:0 0 15px #24ebef;display:grid;place-items:center;color:white;flex:0 0 auto}
 .scanline{position:absolute;left:57.5%;top:23%;width:18%;height:1px;background:linear-gradient(90deg,#d9eef33d,#d9eef3a8,transparent);opacity:.55}.scanline.s2{top:39%}.scanline.s3{top:57%}.scanline.s4{top:75%}
+
+/* modal / bottom sheet */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(4,10,17,.66);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;padding:18px}.overlay.open{display:flex}
+.sheet{width:min(760px,100%);max-height:90dvh;overflow:auto;border-radius:34px;background:linear-gradient(155deg,rgba(240,249,253,.98),rgba(216,232,241,.98));color:#1e2e3b;border:1px solid #fff;box-shadow:0 35px 90px #0009,inset 0 1px 0 #fff;padding:22px}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}.sheet-head h2{margin:0;font-size:23px}.sheet-head p{margin:5px 0 0;color:#708290;font-size:12px}.close{border:0;width:38px;height:38px;border-radius:50%;background:#d8e4eb;color:#516675;font-size:20px;font-weight:900;cursor:pointer}
+.local-badge{display:inline-flex;gap:6px;align-items:center;border-radius:99px;background:#d7f6f3;color:#187c7a;padding:7px 10px;font-size:10px;font-weight:900;margin-bottom:14px}
+.form-section{margin:17px 0 8px;padding:15px;border-radius:22px;background:#f8fbfd;border:1px solid #dbe7ee;box-shadow:0 8px 18px #52708b12}.form-section h3{margin:0 0 12px;font-size:15px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.field{display:grid;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:900;color:#607584}.field input,.field textarea,.field select{width:100%;border:1px solid #c9d8e2;background:#edf3f7;color:#1d3040;border-radius:14px;padding:11px 12px;font:inherit;font-size:13px;outline:none;box-shadow:inset 0 2px 5px #7f9bad17}.field textarea{min-height:80px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#5a8cff;box-shadow:0 0 0 3px #4e81ff18}
+.sheet-actions{position:sticky;bottom:-22px;margin:18px -22px -22px;padding:14px 22px 19px;background:linear-gradient(180deg,rgba(232,242,248,.1),#e8f2f8 28%);display:flex;gap:9px}.action{flex:1;border:0;border-radius:16px;padding:13px 14px;font-weight:900;cursor:pointer}.action.primary{color:#fff;background:linear-gradient(145deg,#4b89ff,#2e68f7);box-shadow:0 10px 20px #2666ed45}.action.secondary{background:#d9e5ec;color:#526b7b}.action.danger{background:#ffe1e7;color:#c63f5a}
+.task-hint{padding:13px 14px;border-radius:18px;background:#dfeaf1;color:#587080;line-height:1.55;font-size:12px;margin-bottom:14px}
+.inline-progress{height:7px;background:#cbd9e2;border-radius:10px;overflow:hidden;margin:8px 0 0}.inline-progress i{display:block;height:100%;background:linear-gradient(90deg,#3c78ff,#20ece8);width:0}
+.toast{position:fixed;z-index:80;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#102230e8;color:white;border:1px solid #ffffff22;border-radius:99px;padding:10px 16px;font-size:12px;font-weight:900;box-shadow:0 14px 30px #0007;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes edgeSpin{to{transform:rotate(360deg)}}@keyframes pulseGlow{to{opacity:.62;transform:scale(1.07)}}
 @media(max-width:700px){
-  .stage{grid-template-columns:61% 35%;gap:4%;padding:4% 2.2%;min-height:100dvh}
-  .panel{border-radius:31px;min-height:92dvh;padding:5.2% 5%}
-  .panel::before{border-radius:33px}
-  .topbar{margin-bottom:8%}.avatar{width:25px}.menu{width:26px;height:23px}.menu i{height:2px}
-  .neo-btn{border-radius:17px;padding:11px 5px}.trip{border-radius:18px;padding:12px}.trip-sub{border-radius:11px;padding:8px}
-  .controls{border-radius:16px;padding:8px;gap:5px}.orbit::before{border-width:2px}.orbit::after{border-width:2px;inset:5px}
-  .progress-box{border-radius:17px;padding:11px}.list-card{border-radius:18px;padding:10px 8px 7px;max-height:40vh}
-  .item{grid-template-columns:18px 1fr;gap:6px;padding:7px 4px}.check{width:18px;height:18px;font-size:9px}.tag{display:none}
-  .rpill,.notify{height:40px;padding:0 9px}.rdot,.cyan-dot{width:21px}.spec,.feature{grid-template-columns:37px 1fr;gap:8px}.swatch,.ficon,.spinner{width:37px}.ficon{border-width:2px;font-size:12px}
-  .micro-card{border-radius:18px;padding:10px}.scanline{display:none}
+ .stage{grid-template-columns:61% 35%;gap:4%;padding:4% 2.2%;min-height:100dvh}.panel{border-radius:31px;min-height:92dvh;padding:5.2% 5%}.panel::before{border-radius:33px}.topbar{margin-bottom:8%}.avatar{width:25px}.menu{width:26px;height:23px}.menu i{height:2px}.neo-btn{border-radius:17px;padding:11px 5px}.trip{border-radius:18px;padding:12px}.trip-sub{border-radius:11px;padding:8px}.controls{border-radius:16px;padding:8px;gap:5px}.orbit::before{border-width:2px}.orbit::after{border-width:2px;inset:5px}.progress-box{border-radius:17px;padding:11px}.list-card{border-radius:18px;padding:10px 8px 7px;max-height:40vh}.item{grid-template-columns:18px 1fr;gap:6px;padding:7px 4px}.check{width:18px;height:18px;font-size:9px}.taskmeta{display:none}.rpill,.notify{min-height:40px;padding:8px 9px}.rdot,.cyan-dot{width:21px}.spec,.feature{grid-template-columns:37px 1fr;gap:8px}.swatch,.ficon,.spinner{width:37px}.ficon{border-width:2px;font-size:12px}.micro-card{border-radius:18px;padding:10px}.scanline{display:none}
+ .overlay{align-items:flex-end;padding:0}.sheet{border-radius:28px 28px 0 0;max-height:92dvh;padding:18px}.sheet-actions{bottom:-18px;margin:16px -18px -18px;padding:13px 18px 18px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.sheet-head h2{font-size:20px}
 }
 </style>
 </head>
 <body>
 <main class="stage">
-  <section class="panel">
-    <header class="topbar">
-      <div class="brand"><div class="avatar">AN</div><span>Umrah Kit</span></div>
-      <div class="menu" aria-label="menu"><i></i><i></i><i></i></div>
-    </header>
+ <section class="panel">
+  <header class="topbar">
+   <div class="brand"><div class="avatar">AN</div><span>Umrah Kit</span></div>
+   <div class="menu" id="menuBtn" aria-label="กรอกข้อมูลทริป"><i></i><i></i><i></i></div>
+  </header>
 
-    <div class="segment">
-      <button class="neo-btn off traveler active" data-person="alif">Alif</button>
-      <button class="neo-btn on traveler" data-person="norida">Norida</button>
-    </div>
+  <div class="segment">
+   <button class="neo-btn on traveler" data-person="alif">Alif</button>
+   <button class="neo-btn off traveler" data-person="norida">Norida</button>
+  </div>
 
-    <section class="card-white trip">
-      <div class="trip-head"><h2>14–28 ต.ค. 2569</h2><span class="chev">⌄</span></div>
-      <div class="trip-sub" id="tripSub">กำลังเตรียมตัว • Cloud sync</div>
-    </section>
-
-    <section class="controls">
-      <button class="round" data-filter="all">≡</button>
-      <button class="round" data-filter="เอกสาร">◐</button>
-      <button class="round" data-filter="สัมภาระ">≋</button>
-      <button class="round" data-filter="อิบาดะห์">＋</button>
-      <div class="orbit" id="laserToggle">⌁</div>
-    </section>
-
-    <section class="card-white progress-box">
-      <div class="progress-top"><div><span>ความพร้อม</span><b id="pct">0%</b></div><span id="doneText">0 / 0</span></div>
-      <div class="track"><i id="progressFill"></i></div>
-    </section>
-
-    <section class="card-white list-card">
-      <div class="list-title"><b id="listTitle">Checklist ของ Alif</b><button id="reset">•••</button></div>
-      <div class="filters" id="filters"></div>
-      <div id="list"><div style="padding:18px;text-align:center;color:#8795a0;font-size:11px">กำลังโหลด...</div></div>
-    </section>
+  <section class="card-white trip" id="tripCard">
+   <div class="trip-head"><h2>14–28 ต.ค. 2569</h2><span class="chev">›</span></div>
+   <div class="trip-sub" id="tripSub">แตะเพื่อกรอกรายละเอียดทริป</div>
   </section>
 
-  <aside class="rail">
-    <h1>Neo‑Tactile</h1>
-    <div class="subhead">Umrah readiness system</div>
+  <section class="controls">
+   <button class="round active" data-filter="all">≡</button>
+   <button class="round" data-filter="เอกสาร">◐</button>
+   <button class="round" data-filter="สัมภาระ">≋</button>
+   <button class="round" data-filter="อิบาดะห์">＋</button>
+   <div class="orbit" id="laserToggle">⌁</div>
+  </section>
 
-    <div class="rpill"><div class="rdot">◉</div><span id="syncStatus">connecting</span></div>
+  <section class="card-white progress-box">
+   <div class="progress-top"><div><span>ความพร้อม</span><b id="pct">0%</b></div><span id="doneText">0 / 0</span></div>
+   <div class="track"><i id="progressFill"></i></div>
+  </section>
 
-    <div class="spec"><div class="swatch blue"></div><div><div id="railPct">0%</div><small style="opacity:.55">READY</small></div></div>
-    <div class="spec"><div class="swatch gray"></div><div><div id="remaining">0 left</div><small style="opacity:.55">TASKS</small></div></div>
+  <section class="card-white list-card">
+   <div class="list-title"><b id="listTitle">Checklist ของ Alif</b><button id="reset" title="รีเซ็ต">รีเซ็ต</button></div>
+   <div class="filters" id="filters"></div>
+   <div id="list"><div style="padding:18px;text-align:center;color:#8795a0;font-size:11px">กำลังโหลด...</div></div>
+  </section>
+ </section>
 
-    <div class="feature"><div class="ficon">⌂</div><div>Raised<br>elements</div></div>
-    <div class="feature"><div class="ficon">▣</div><div>Glass hover<br>states</div></div>
-    <div class="feature"><div class="spinner">4</div><div>Live sync<br>animation</div></div>
-
-    <div class="micro">Microinteraction</div>
-    <div class="micro-card">＋ &nbsp; Checklist filter &nbsp;⌄</div>
-    <div class="notify"><div class="cyan-dot">✓</div><span id="cloudState">Supabase</span></div>
-  </aside>
-
-  <i class="scanline"></i><i class="scanline s2"></i><i class="scanline s3"></i><i class="scanline s4"></i>
+ <aside class="rail">
+  <h1>Neo‑Tactile</h1>
+  <div class="subhead">Umrah readiness system</div>
+  <div class="rpill"><div class="rdot">◉</div><span id="syncStatus">connecting</span></div>
+  <div class="spec"><div class="swatch blue"></div><div><div id="railPct">0%</div><small style="opacity:.55">READY</small></div></div>
+  <div class="spec"><div class="swatch gray"></div><div><div id="remaining">0 left</div><small style="opacity:.55">TASKS</small></div></div>
+  <div class="feature"><div class="ficon">⌂</div><div>Trip<br>details</div></div>
+  <div class="feature"><div class="ficon">▣</div><div>Task<br>notes</div></div>
+  <div class="feature"><div class="spinner">4</div><div>Live cloud<br>check sync</div></div>
+  <div class="micro">Quick action</div>
+  <div class="micro-card" id="quickTrip">＋ &nbsp; กรอกข้อมูลทริป &nbsp;›</div>
+  <div class="notify"><div class="cyan-dot">✓</div><span id="cloudState">Supabase</span></div>
+ </aside>
+ <i class="scanline"></i><i class="scanline s2"></i><i class="scanline s3"></i><i class="scanline s4"></i>
 </main>
+
+<!-- Trip details modal -->
+<div class="overlay" id="tripOverlay" role="dialog" aria-modal="true">
+ <section class="sheet">
+  <div class="sheet-head">
+   <div><h2>รายละเอียดทริปอุมเราะห์</h2><p>กรอกข้อมูลที่ต้องเปิดดูระหว่างเดินทางให้ครบในที่เดียว</p></div>
+   <button class="close" data-close="tripOverlay">×</button>
+  </div>
+  <div class="local-badge">🔒 เก็บข้อมูลรายละเอียดไว้ในเครื่องนี้เท่านั้น</div>
+  <div class="form-section">
+   <h3>ผู้เดินทางและวันเดินทาง</h3>
+   <div class="form-grid">
+    <div class="field"><label>ชื่อผู้เดินทาง 1</label><input data-trip="traveler1" value="Alif"></div>
+    <div class="field"><label>ชื่อผู้เดินทาง 2</label><input data-trip="traveler2" value="Norida"></div>
+    <div class="field"><label>วันออกเดินทาง</label><input type="date" data-trip="depart_date" value="2026-10-14"></div>
+    <div class="field"><label>วันสิ้นสุดทริป</label><input type="date" data-trip="return_date" value="2026-10-28"></div>
+    <div class="field full"><label>เส้นทางหลัก</label><input data-trip="route" value="Bangkok (BKK) → Doha (DOH) → Jeddah (JED)"></div>
+   </div>
+  </div>
+
+  <div class="form-section">
+   <h3>เที่ยวบิน</h3>
+   <div class="form-grid">
+    <div class="field"><label>สายการบิน</label><input data-trip="airline" placeholder="เช่น Qatar Airways"></div>
+    <div class="field"><label>เลขจอง / PNR</label><input data-trip="booking_ref" placeholder="กรอกเลขจอง"></div>
+    <div class="field"><label>เที่ยวบินขาไป</label><input data-trip="outbound_flight" placeholder="เช่น QR..."></div>
+    <div class="field"><label>เที่ยวบินขากลับ</label><input data-trip="return_flight" placeholder="เช่น QR..."></div>
+    <div class="field"><label>เวลาออกจากกรุงเทพฯ</label><input type="time" data-trip="bkk_depart_time"></div>
+    <div class="field"><label>เวลาต่อเครื่องโดฮา</label><input data-trip="doha_layover" value="ประมาณ 6–7 ชั่วโมง"></div>
+    <div class="field full"><label>เที่ยวบินในประเทศ</label><input data-trip="domestic_route" value="นราธิวาส ↔ กรุงเทพฯ"></div>
+    <div class="field full"><label>หมายเหตุสนามบิน/เกต</label><textarea data-trip="flight_note" placeholder="เช่น เช็กจอเกตทุก 30 นาที, จุดนัดพบ, terminal"></textarea></div>
+   </div>
+  </div>
+
+  <div class="form-section">
+   <h3>ที่พัก</h3>
+   <div class="form-grid">
+    <div class="field"><label>โรงแรมมักกะห์</label><input data-trip="makkah_hotel" placeholder="ชื่อโรงแรม"></div>
+    <div class="field"><label>เลขจองมักกะห์</label><input data-trip="makkah_booking" placeholder="เลขจอง"></div>
+    <div class="field full"><label>ที่อยู่/จุดสังเกตมักกะห์</label><input data-trip="makkah_address" placeholder="ที่อยู่หรือชื่อถนน"></div>
+    <div class="field"><label>โรงแรมมะดีนะห์</label><input data-trip="madinah_hotel" placeholder="ชื่อโรงแรม"></div>
+    <div class="field"><label>เลขจองมะดีนะห์</label><input data-trip="madinah_booking" placeholder="เลขจอง"></div>
+    <div class="field full"><label>ที่อยู่/จุดสังเกตมะดีนะห์</label><input data-trip="madinah_address" placeholder="ที่อยู่หรือชื่อถนน"></div>
+   </div>
+  </div>
+
+  <div class="form-section">
+   <h3>รถรับส่ง / กระเป๋า / ผู้ติดต่อ</h3>
+   <div class="form-grid">
+    <div class="field"><label>คนขับ/ไกด์</label><input data-trip="driver_name" placeholder="ชื่อคนขับหรือไกด์"></div>
+    <div class="field"><label>เบอร์ติดต่อ</label><input data-trip="driver_phone" inputmode="tel" placeholder="+966..."></div>
+    <div class="field"><label>จุดรับที่สนามบิน</label><input data-trip="pickup_point" placeholder="จุดนัดพบ"></div>
+    <div class="field"><label>กระเป๋า</label><input data-trip="luggage" value="กระเป๋าใหญ่ 2 + กระเป๋าเล็ก 1"></div>
+    <div class="field full"><label>ผู้ติดต่อฉุกเฉิน</label><input data-trip="emergency_contact" placeholder="ชื่อ + เบอร์โทร"></div>
+   </div>
+  </div>
+
+  <div class="form-section">
+   <h3>อินเทอร์เน็ต / เงิน / สุขภาพ</h3>
+   <div class="form-grid">
+    <div class="field"><label>ซิม/แพ็กเกจ</label><input data-trip="sim_plan" placeholder="เช่น SIM2Fly / Saudi SIM"></div>
+    <div class="field"><label>Wi‑Fi บนเครื่อง</label><input data-trip="flight_wifi" value="Alif 1 ชม. + Norida 1 ชม."></div>
+    <div class="field"><label>เงินสดที่พก</label><input data-trip="cash" placeholder="เช่น 1,000 SAR"></div>
+    <div class="field"><label>บัตรสำรอง</label><select data-trip="backup_card"><option value="">เลือก</option><option>มี</option><option>ไม่มี</option></select></div>
+    <div class="field full"><label>ยา/ของใช้สุขภาพที่ต้องไม่ลืม</label><textarea data-trip="medicine" placeholder="ชื่อยา จำนวน วิธีใช้ หรือของใช้จำเป็น"></textarea></div>
+    <div class="field full"><label>หมายเหตุสำคัญ</label><textarea data-trip="general_note" placeholder="ข้อมูลที่อยากเปิดดูเร็วระหว่างเดินทาง"></textarea></div>
+   </div>
+  </div>
+
+  <div class="form-section">
+   <h3>ความครบถ้วนของข้อมูล</h3>
+   <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:900"><span>ข้อมูลทริป</span><span id="tripCompleteText">0%</span></div>
+   <div class="inline-progress"><i id="tripCompleteBar"></i></div>
+  </div>
+
+  <div class="sheet-actions">
+   <button class="action secondary" data-close="tripOverlay">ยกเลิก</button>
+   <button class="action primary" id="saveTrip">บันทึกข้อมูล</button>
+  </div>
+ </section>
+</div>
+
+<!-- Task detail modal -->
+<div class="overlay" id="taskOverlay" role="dialog" aria-modal="true">
+ <section class="sheet">
+  <div class="sheet-head">
+   <div><h2 id="taskTitle">รายละเอียดรายการ</h2><p id="taskCategory"></p></div>
+   <button class="close" data-close="taskOverlay">×</button>
+  </div>
+  <div class="task-hint" id="taskHint"></div>
+  <div class="local-badge">📝 หมายเหตุรายการนี้เก็บไว้ในเครื่อง</div>
+  <div class="form-section">
+   <div class="form-grid">
+    <div class="field full"><label>รายละเอียด / สิ่งที่ต้องจำ</label><textarea id="taskNote" placeholder="เช่น เลขจอง จุดรับของ ลิงก์ไฟล์ หรือสิ่งที่ยังขาด"></textarea></div>
+    <div class="field"><label>วัน/เวลาที่เกี่ยวข้อง</label><input id="taskWhen" placeholder="เช่น 14 ต.ค. 19:00"></div>
+    <div class="field"><label>อ้างอิง</label><input id="taskRef" placeholder="เลขจอง / ชื่อไฟล์ / จุดนัดพบ"></div>
+   </div>
+  </div>
+  <div class="sheet-actions">
+   <button class="action secondary" id="saveTaskNote">บันทึกหมายเหตุ</button>
+   <button class="action primary" id="toggleTaskDone">ทำแล้ว</button>
+  </div>
+ </section>
+</div>
+
+<div class="toast" id="toast">บันทึกแล้ว</div>
 
 <script type="module">
 import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
 const sb=createClient('https://tuecnsivhholbhpzhuia.supabase.co','sb_publishable_n8AkyIyXW2WZ7N_OhxiMHg_fCknAfm2');
-const S={person:'alif',filter:'all',tasks:[],checks:{alif:{},norida:{}}};
+
+const TRIP_KEY='umrah_trip_details_v2';
+const NOTES_KEY='umrah_task_notes_v2';
+const S={person:'alif',filter:'all',tasks:[],checks:{alif:{},norida:{}},selectedTask:null};
 const $=s=>document.getElementById(s);
 const cats=['all','เอกสาร','สัมภาระ','สุขภาพ','ที่พัก','การเงิน','การสื่อสาร','อิบาดะห์'];
+const defaults={
+ traveler1:'Alif',traveler2:'Norida',depart_date:'2026-10-14',return_date:'2026-10-28',
+ route:'Bangkok (BKK) → Doha (DOH) → Jeddah (JED)',doha_layover:'ประมาณ 6–7 ชั่วโมง',
+ domestic_route:'นราธิวาส ↔ กรุงเทพฯ',luggage:'กระเป๋าใหญ่ 2 + กระเป๋าเล็ก 1',
+ flight_wifi:'Alif 1 ชม. + Norida 1 ชม.'
+};
+let trip=loadJSON(TRIP_KEY,defaults);
+let notes=loadJSON(NOTES_KEY,{});
+
+function loadJSON(key,fallback){try{return {...fallback,...JSON.parse(localStorage.getItem(key)||'{}')}}catch{return {...fallback}}}
+function saveJSON(key,val){localStorage.setItem(key,JSON.stringify(val))}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1600)}
+function openOverlay(id){$(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeOverlay(id){$(id).classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>closeOverlay(b.dataset.close));
+document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)closeOverlay(o.id)}));
+
 function personTasks(p=S.person){return S.tasks.filter(t=>t.owner==='both'||t.owner===p)}
 function visible(){return personTasks().filter(t=>S.filter==='all'||t.category===S.filter)}
 function stats(p=S.person){const a=personTasks(p),d=a.filter(t=>S.checks[p][String(t.id)]).length;return{d,n:a.length,p:a.length?Math.round(d/a.length*100):0}}
+function noteKey(taskId,person=S.person){return person+':'+taskId}
+function hasNote(taskId){const n=notes[noteKey(taskId)];return !!(n&&(n.note||n.when||n.ref))}
+
 function renderFilters(){
  $('filters').innerHTML=cats.filter(c=>c==='all'||S.tasks.some(t=>t.category===c)).map(c=>'<button class="chip '+(S.filter===c?'active':'')+'" data-c="'+c+'">'+(c==='all'?'ทั้งหมด':c)+'</button>').join('');
- document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{S.filter=b.dataset.c;render()})
+ document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{S.filter=b.dataset.c;document.querySelectorAll('.round').forEach(r=>r.classList.toggle('active',r.dataset.filter===S.filter));render()})
 }
 function render(){
  renderFilters();
@@ -170,34 +281,105 @@ function render(){
  $('pct').textContent=a.p+'%';$('progressFill').style.width=a.p+'%';$('doneText').textContent=a.d+' / '+a.n;
  $('listTitle').textContent='Checklist ของ '+(S.person==='alif'?'Alif':'Norida');
  $('railPct').textContent=overall+'%';$('remaining').textContent=((aa.n-aa.d)+(nn.n-nn.d))+' left';
+ updateTripSummary();
  const box=$('list');box.innerHTML='';
  const arr=visible();
  if(!arr.length){box.innerHTML='<div style="padding:18px;text-align:center;color:#8795a0;font-size:11px">ไม่มีรายการในหมวดนี้</div>';return}
- arr.forEach(t=>{const id=String(t.id),done=!!S.checks[S.person][id],row=document.createElement('div');row.className='item'+(done?' done':'');row.innerHTML='<div class="check">'+(done?'✓':'')+'</div><div class="itxt">'+t.title_th+'</div><div class="tag">'+t.category+'</div>';row.onclick=()=>toggle(id);box.appendChild(row)})
+ arr.forEach(t=>{
+  const id=String(t.id),done=!!S.checks[S.person][id],row=document.createElement('div');
+  row.className='item'+(done?' done':'');
+  const meta='<div class="taskmeta">'+(hasNote(id)?'<span class="note-dot">มีโน้ต</span>':'')+'<span class="tag">'+escapeHTML(t.category||'ทั่วไป')+'</span></div>';
+  row.innerHTML='<div class="check">'+(done?'✓':'')+'</div><div class="itxt">'+escapeHTML(t.title_th)+'</div>'+meta;
+  row.querySelector('.check').onclick=e=>{e.stopPropagation();toggle(id)};
+  row.onclick=()=>openTask(t);
+  box.appendChild(row)
+ })
 }
+function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
 async function load(){
  const [{data:tasks,error:e1},{data:checks,error:e2}]=await Promise.all([
   sb.from('umrah_tasks').select('id,title_th,category,owner,sort_order,is_active').eq('is_active',true).order('sort_order'),
   sb.from('umrah_checklist').select('traveler,item_id,done')
  ]);
- if(e1){$('syncStatus').textContent='load error';$('cloudState').textContent='offline';return}
+ if(e1){$('syncStatus').textContent='โหลดรายการไม่ได้';$('cloudState').textContent='Offline';return}
  S.tasks=tasks||[];(checks||[]).forEach(r=>{if(S.checks[r.traveler])S.checks[r.traveler][String(r.item_id)]=r.done});
- $('syncStatus').textContent=e2?'partial sync':'cloud synced';$('cloudState').textContent=e2?'Partial':'Synced';render()
+ $('syncStatus').textContent=e2?'sync บางส่วน':'cloud synced';$('cloudState').textContent=e2?'Partial':'Synced';render()
 }
-async function save(id,done){
+async function saveCheck(id,done){
  $('syncStatus').textContent='syncing...';
  const {error}=await sb.from('umrah_checklist').upsert({traveler:S.person,item_id:id,done,updated_at:new Date().toISOString()},{onConflict:'traveler,item_id'});
  $('syncStatus').textContent=error?'sync error':'cloud synced';$('cloudState').textContent=error?'Error':'Synced'
 }
-async function toggle(id){S.checks[S.person][id]=!S.checks[S.person][id];render();await save(id,S.checks[S.person][id])}
+async function toggle(id){
+ S.checks[S.person][id]=!S.checks[S.person][id];render();await saveCheck(id,S.checks[S.person][id]);
+ if(S.selectedTask&&String(S.selectedTask.id)===String(id))updateTaskButton()
+}
+
 document.querySelectorAll('.traveler').forEach(b=>b.onclick=()=>{
  S.person=b.dataset.person;
  document.querySelectorAll('.traveler').forEach(x=>{const active=x.dataset.person===S.person;x.classList.toggle('on',active);x.classList.toggle('off',!active)});
  render()
 });
-document.querySelectorAll('.round').forEach(b=>b.onclick=()=>{S.filter=b.dataset.filter;render()});
-$('reset').onclick=async()=>{S.checks[S.person]={};render();const {error}=await sb.from('umrah_checklist').delete().eq('traveler',S.person);$('syncStatus').textContent=error?'sync error':'cloud synced'};
+document.querySelectorAll('.round').forEach(b=>b.onclick=()=>{S.filter=b.dataset.filter;document.querySelectorAll('.round').forEach(r=>r.classList.toggle('active',r===b));render()});
+$('reset').onclick=async()=>{
+ if(!confirm('รีเซ็ตเครื่องหมายเช็กของ '+(S.person==='alif'?'Alif':'Norida')+' ทั้งหมด?'))return;
+ S.checks[S.person]={};render();const {error}=await sb.from('umrah_checklist').delete().eq('traveler',S.person);$('syncStatus').textContent=error?'sync error':'cloud synced';toast(error?'รีเซ็ตในเครื่องแล้ว แต่ sync ไม่สำเร็จ':'รีเซ็ตแล้ว')
+};
 $('laserToggle').onclick=()=>document.body.classList.toggle('laser-off');
+
+/* trip form */
+const tripFields=()=>[...document.querySelectorAll('[data-trip]')];
+function fillTripForm(){tripFields().forEach(el=>{el.value=trip[el.dataset.trip]??''});updateTripCompleteness()}
+function collectTripForm(){tripFields().forEach(el=>trip[el.dataset.trip]=el.value.trim())}
+const keyTripFields=['traveler1','traveler2','depart_date','return_date','route','airline','booking_ref','makkah_hotel','madinah_hotel','emergency_contact','sim_plan','medicine'];
+function tripCompletion(){
+ const filled=keyTripFields.filter(k=>String(trip[k]||'').trim()).length;return Math.round(filled/keyTripFields.length*100)
+}
+function updateTripCompleteness(){
+ const temp={...trip};tripFields().forEach(el=>temp[el.dataset.trip]=el.value.trim());
+ const filled=keyTripFields.filter(k=>String(temp[k]||'').trim()).length,p=Math.round(filled/keyTripFields.length*100);
+ $('tripCompleteText').textContent=p+'%';$('tripCompleteBar').style.width=p+'%'
+}
+function updateTripSummary(){const p=tripCompletion();$('tripSub').textContent='ข้อมูลทริป '+p+'% • แตะเพื่อกรอก/แก้ไข'}
+function openTrip(){fillTripForm();openOverlay('tripOverlay')}
+$('tripCard').onclick=openTrip;$('quickTrip').onclick=openTrip;$('menuBtn').onclick=openTrip;
+tripFields().forEach(el=>el.addEventListener('input',updateTripCompleteness));
+$('saveTrip').onclick=()=>{collectTripForm();saveJSON(TRIP_KEY,trip);updateTripSummary();closeOverlay('tripOverlay');toast('บันทึกข้อมูลทริปในเครื่องแล้ว')};
+
+/* task detail */
+function hintFor(t){
+ const c=t.category||'';
+ const map={
+  'เอกสาร':'ตรวจว่ามีเอกสารฉบับจริงและสำเนา/ภาพในมือถือ พร้อมเปิดดูได้แม้ไม่มีอินเทอร์เน็ต',
+  'สัมภาระ':'เช็กจำนวนและตำแหน่งที่เก็บของชิ้นนี้ก่อนออกจากบ้าน และก่อนย้ายโรงแรม',
+  'สุขภาพ':'เตรียมให้พอทั้งทริป เก็บยาสำคัญไว้ในกระเป๋าถือ และจดวิธีใช้ที่จำเป็น',
+  'ที่พัก':'บันทึกชื่อโรงแรม ที่อยู่ เลขจอง และภาพแผนที่/จุดสังเกตไว้เปิดให้คนขับดูได้',
+  'การเงิน':'กำหนดเงินสดที่พก แยกเงินสำรอง และเตรียมบัตรสำรองโดยไม่บันทึกเลขบัตรในแอป',
+  'การสื่อสาร':'เตรียมซิม แพ็กเกจ อินเทอร์เน็ต และวิธีติดต่อกันหากพลัดหลง',
+  'อิบาดะห์':'ทบทวนขั้นตอน ลำดับ และดุอาอ์ที่ต้องการใช้ เก็บโน้ตสั้น ๆ เพื่อเปิดดูง่าย',
+  'การเดินทาง':'บันทึกเลขเที่ยวบิน เวลา สนามบิน/เทอร์มินัล จุดนัดพบ และเช็กเกตอีกครั้งก่อนขึ้นเครื่อง'
+ };
+ return map[c]||'เปิดรายการนี้แล้วกรอกข้อมูลที่ต้องจำ จากนั้นกด “ทำแล้ว” เมื่อเตรียมเสร็จจริง'
+}
+function openTask(t){
+ S.selectedTask=t;const id=String(t.id),n=notes[noteKey(id)]||{};
+ $('taskTitle').textContent=t.title_th;$('taskCategory').textContent=(t.category||'ทั่วไป')+' • '+(S.person==='alif'?'Alif':'Norida');
+ $('taskHint').textContent=hintFor(t);$('taskNote').value=n.note||'';$('taskWhen').value=n.when||'';$('taskRef').value=n.ref||'';
+ updateTaskButton();openOverlay('taskOverlay')
+}
+function updateTaskButton(){
+ if(!S.selectedTask)return;const done=!!S.checks[S.person][String(S.selectedTask.id)];
+ $('toggleTaskDone').textContent=done?'ทำแล้ว ✓ — กดเพื่อยกเลิก':'ทำแล้ว';$('toggleTaskDone').classList.toggle('danger',done)
+}
+$('saveTaskNote').onclick=()=>{
+ if(!S.selectedTask)return;const id=String(S.selectedTask.id);
+ notes[noteKey(id)]={note:$('taskNote').value.trim(),when:$('taskWhen').value.trim(),ref:$('taskRef').value.trim()};
+ saveJSON(NOTES_KEY,notes);render();toast('บันทึกหมายเหตุแล้ว')
+};
+$('toggleTaskDone').onclick=async()=>{if(!S.selectedTask)return;await toggle(String(S.selectedTask.id));toast(S.checks[S.person][String(S.selectedTask.id)]?'ทำเครื่องหมายว่าเสร็จแล้ว':'ยกเลิกเครื่องหมายเสร็จแล้ว')};
+
+updateTripSummary();
 load();
 </script>
 </body>
