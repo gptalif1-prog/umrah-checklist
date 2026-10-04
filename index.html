@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07131f">
+<title>Umrah Ready — Alif & Norida</title>
+<style>
+:root{--cyan:#28f1ff;--blue:#2d77ff;--bg:#06111c;--ink:#102033;--muted:#8093a3}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif;background:
+radial-gradient(circle at 20% 0%,#17394f 0 12%,transparent 34%),
+radial-gradient(circle at 90% 52%,#0b2740 0 8%,transparent 28%),
+linear-gradient(155deg,#08131f,#02070d 58%,#081724);color:#eef8ff;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;mix-blend-mode:screen;animation:float 9s ease-in-out infinite alternate}
+body:before{width:360px;height:360px;background:#20dff3;left:-150px;top:-100px}body:after{width:320px;height:320px;background:#176dff;right:-120px;top:40%;animation-delay:-2s}
+.shell{width:min(1180px,94vw);margin:auto;padding:28px 0 60px}.grid{display:grid;grid-template-columns:minmax(0,620px) 1fr;gap:54px;align-items:center}
+.glass{position:relative;background:linear-gradient(145deg,rgba(221,248,255,.23),rgba(105,149,178,.11) 42%,rgba(12,31,48,.3));backdrop-filter:blur(30px) saturate(145%);border:1px solid rgba(226,248,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 28px 70px rgba(0,0,0,.42)}
+.main{border-radius:52px;padding:28px;overflow:hidden;isolation:isolate}.main>*:not(.laser){position:relative;z-index:2}
+.laser{position:absolute;inset:-45%;background:conic-gradient(from 0deg,transparent 0 46%,rgba(32,245,255,.05) 48%,#26f5ff 50%,#2a77ff 51.5%,transparent 54%);animation:spin 5.4s linear infinite;filter:blur(1px);z-index:0}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.brand{display:flex;align-items:center;gap:12px}.avatars{display:flex}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:900;background:linear-gradient(145deg,#e7f4fb,#93d6ed);color:#17394f;border:2px solid rgba(255,255,255,.75);box-shadow:0 8px 18px #0005}.avatar.n{margin-left:-11px;background:linear-gradient(145deg,#fff0e7,#ffc5a8)}.eyebrow{font-size:10px;letter-spacing:.18em;font-weight:900;color:#b6d7eb}.brand h1{margin:1px 0 0;font-size:22px}.menu{font-size:28px;opacity:.65}
+.inset{background:linear-gradient(150deg,rgba(4,17,29,.52),rgba(138,191,220,.11));border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 7px 22px #0004,0 10px 25px #0003}
+.trip{border-radius:25px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.label{font-size:12px;color:#aac5d6}.trip-date{font-size:17px;font-weight:900;margin-top:2px}.status{padding:9px 12px;border-radius:99px;background:#2374ff22;border:1px solid #60a3ff33;color:#b5dbff;font-size:12px;box-shadow:0 0 20px #2479ff20}
+.switcher{padding:7px;border-radius:25px;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.traveler{padding:15px;border:0;border-radius:19px;background:#dcebf31c;color:#c7dae6;font-weight:900;font-size:15px;cursor:pointer;transition:.22s}.traveler.active{background:linear-gradient(180deg,#4798ff,#2069ff);color:#fff;box-shadow:0 12px 26px #165eff66,inset 0 1px 0 #ffffff88,0 0 25px #2b82ff55}
+.white{background:linear-gradient(160deg,rgba(250,253,255,.96),rgba(224,236,246,.92));border:1px solid rgba(255,255,255,.9);color:var(--ink);box-shadow:0 20px 45px #01101d40,inset 0 1px 0 #fff}
+.progress{border-radius:28px;padding:19px;display:flex;justify-content:space-between;align-items:center}.progress strong{display:block;font-size:38px;line-height:1;margin:6px 0}.progress small{color:#7d8e9b}.ring{--p:0;width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#19dedf calc(var(--p)*1%),#2d78ff calc(var(--p)*1% + 2%),#d8e3ec 0);box-shadow:0 12px 26px #2060a833}.ring i{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(150deg,#f7fbff,#d9e6ef);font-style:normal;font-weight:900;color:#246cff}
+.filters{display:flex;gap:8px;overflow:auto;padding:13px 1px 11px;scrollbar-width:none}.chip{white-space:nowrap;border:1px solid #ffffff25;background:#0718265c;color:#bed1de;border-radius:99px;padding:9px 13px;font-weight:800;cursor:pointer}.chip.active{background:#edf5fb;color:#183751}
+.checkcard{border-radius:29px;padding:18px 17px 12px}.checkhead{display:flex;justify-content:space-between;align-items:center;padding:0 4px 10px}.checkhead h2{margin:2px 0 0;font-size:20px}.reset{border:0;border-radius:12px;padding:8px 10px;background:#dce8f0;color:#526779;font-weight:800;cursor:pointer}.list{display:grid;gap:7px}.item{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;padding:12px;border-radius:18px;cursor:pointer;transition:.2s}.item:hover{background:#5f8ead12;transform:translateY(-1px)}.box{width:29px;height:29px;border-radius:10px;border:1px solid #b8cbd8;background:#dce8f0;display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:inset 0 2px 6px #3a556829}.item.done{opacity:.6}.item.done .title{text-decoration:line-through}.item.done .box{background:linear-gradient(145deg,#2df2e6,#2d7aff);border-color:#69e9ff;box-shadow:0 0 17px #16ddf175}.title{font-size:14px;font-weight:900}.sub{font-size:11px;color:#8295a4;margin-top:2px}.tag{font-size:9px;font-weight:900;color:#6d8090;background:#dfe9f0;border-radius:9px;padding:6px 8px}
+.bottom{margin-top:14px;border-radius:23px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center}.sync{display:flex;align-items:center;gap:10px}.syncicon{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#23f3ff16;color:#70f8ff;border:1px solid #5ceeff4d;box-shadow:0 0 18px #0df1ff40}.sync b,.sync small{display:block}.sync small{font-size:10px;color:#9db8c9}.toggle{width:58px;height:33px;border-radius:99px;background:linear-gradient(90deg,#1a6dff,#27def0);position:relative;cursor:pointer;box-shadow:inset 0 4px 12px #0004}.toggle:after{content:"";position:absolute;width:27px;height:27px;border-radius:50%;background:#edf6fc;right:3px;top:3px;box-shadow:0 6px 13px #0006}.laser-off .laser,.laser-off .scan{animation-play-state:paused;opacity:.08}
+.side h2{font-size:clamp(42px,6vw,70px);line-height:.92;margin:8px 0 15px;letter-spacing:-.05em}.side p{color:#94acbd;max-width:420px;line-height:1.75}.metric{display:flex;gap:13px;align-items:center;border:1px solid #ffffff20;background:#afd7ee17;border-radius:24px;padding:16px 18px;margin:12px 0;max-width:360px;box-shadow:inset 0 1px 0 #ffffff22,0 14px 28px #0003}.dot{width:55px;height:55px;border-radius:50%;background:#2b7cff;box-shadow:inset 0 1px 0 #ffffff80,0 12px 22px #0004}.dot.gray{background:linear-gradient(145deg,#789bb5,#4f718a)}.metric small,.metric b{display:block}.metric small{font-size:11px;color:#84a0b5}.metric b{font-size:18px;margin-top:2px}
+.radar{width:190px;height:190px;border-radius:50%;margin:24px 0;overflow:hidden;display:grid;place-items:center}.radar:before{content:"";position:absolute;inset:-35%;background:conic-gradient(transparent 0 55%,#27f7fb 57%,#2477ff 59%,transparent 62%);animation:spin 3.2s linear infinite;filter:blur(2px)}.radarcore{position:relative;z-index:2;width:115px;height:115px;border-radius:50%;display:grid;place-content:center;text-align:center;background:#03121fc9;border:1px solid #ffffff26;box-shadow:inset 0 0 30px #2577ff40,0 0 35px #00f5ff2e}.radarcore b{font-size:15px}.radarcore small{font-size:9px;color:#82a5b8}.scan{position:absolute;width:45%;height:2px;background:linear-gradient(90deg,transparent,#4dfaff);left:50%;top:50%;transform-origin:0 50%;animation:spin 2.8s linear infinite;box-shadow:0 0 10px #3df5ff}
+.quick{max-width:390px;border:1px solid #ffffff20;background:#afd7ee17;border-radius:23px;padding:16px 17px}.qtop{display:flex;justify-content:space-between;align-items:center;font-weight:900}.badge{font-size:11px;background:#2781ff25;color:#94c8ff;padding:7px 9px;border-radius:9px}.bar{height:7px;background:#8bafc333;border-radius:8px;overflow:hidden;margin:12px 0}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#276dff,#26f3ea);box-shadow:0 0 14px #21d9ff;transition:.35s}.quick small{font-size:10px;color:#84a1b3}.cta{width:min(100%,390px);margin-top:17px;border:0;border-radius:21px;padding:15px 18px;color:#fff;font-weight:900;background:linear-gradient(180deg,#4293ff,#1c62ff);box-shadow:0 16px 34px #1d5aff52,inset 0 1px 0 #ffffff80;cursor:pointer}
+.loading{text-align:center;padding:28px;color:#7b90a0;font-weight:800}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{to{transform:translate(55px,40px) scale(1.15)}}
+@media(max-width:900px){.shell{padding:18px 0 40px}.grid{grid-template-columns:1fr;gap:28px}.main{border-radius:40px;padding:21px}.side{padding:0 12px}.side h2{font-size:49px}.metric,.quick,.cta{max-width:none}}@media(max-width:520px){.main{padding:15px;border-radius:32px}.brand h1{font-size:19px}.avatar{width:34px;height:34px}.ring{width:78px;height:78px}.ring i{width:52px;height:52px}.item{grid-template-columns:auto 1fr}.tag{display:none}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="grid">
+<article class="glass main">
+<div class="laser"></div>
+<header class="top"><div class="brand"><div class="avatars"><div class="avatar">A</div><div class="avatar n">N</div></div><div><div class="eyebrow">UMRAH READY</div><h1>Alif & Norida</h1></div></div><div class="menu">☰</div></header>
+<section class="trip inset"><div><div class="label">ทริปอุมเราะห์</div><div class="trip-date">14–28 ต.ค. 2569</div></div><div class="status">กำลังเตรียมตัว</div></section>
+<section class="switcher inset"><button class="traveler active" data-person="alif">Alif</button><button class="traveler" data-person="norida">Norida</button></section>
+<section class="white progress"><div><div class="label" style="color:#718597">ความพร้อม</div><strong id="pText">0%</strong><small id="dText">0 จาก 0 รายการ</small></div><div class="ring" id="ring"><i id="mini">0%</i></div></section>
+<div class="filters" id="filters"><button class="chip active" data-filter="all">ทั้งหมด</button></div>
+<section class="white checkcard"><div class="checkhead"><div><div class="label" style="color:#718597">CHECKLIST</div><h2 id="personTitle">ของ Alif</h2></div><button class="reset" id="reset">รีเซ็ต</button></div><div class="list" id="list"><div class="loading">กำลังโหลด...</div></div></section>
+<section class="bottom inset"><div class="sync"><span class="syncicon">✦</span><div><b>Laser Sync</b><small id="syncStatus">กำลังเชื่อม...</small></div></div><div class="toggle" id="toggle"></div></section>
+</article>
+<aside class="side">
+<div class="eyebrow">NEO-TACTILE</div><h2>Umrah<br>Checklist</h2><p>เช็กลิสต์เตรียมเดินทางของ Alif และ Norida ซิงก์ผ่าน Supabase พร้อม Glass UI และไฟเลเซอร์เคลื่อนไหว</p>
+<div class="metric"><span class="dot"></span><div><small>สถานะรวม</small><b id="overall">0% Ready</b></div></div>
+<div class="metric"><span class="dot gray"></span><div><small>เหลือ</small><b id="remaining">0 รายการ</b></div></div>
+<div class="glass radar"><div class="radarcore"><div style="font-size:30px;color:#3cf6ff">⌁</div><b>Cloud Sync</b><small id="cloud">Supabase</small></div><div class="scan"></div></div>
+<div class="quick"><div class="qtop"><span>ก่อนออกเดินทาง</span><span class="badge" id="days">— วัน</span></div><div class="bar"><i id="bar"></i></div><small>เอกสาร • สัมภาระ • สุขภาพ • อิบาดะห์</small></div>
+<button class="cta" id="essentials">เช็ก 5 รายการแรกให้แล้ว</button>
+</aside>
+</section>
+</main>
+<script type="module">
+import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
+const supabase=createClient('https://tuecnsivhholbhpzhuia.supabase.co','sb_publishable_n8AkyIyXW2WZ7N_OhxiMHg_fCknAfm2');
+const state={person:'alif',filter:'all',tasks:[],checks:{alif:{},norida:{}}};
+const $=id=>document.getElementById(id);
+const catLabel=c=>c||'ทั่วไป';
+function visibleTasks(person=state.person){return state.tasks.filter(t=>(t.owner==='both'||t.owner===person)&&(state.filter==='all'||t.category===state.filter))}
+function totalTasks(person){return state.tasks.filter(t=>t.owner==='both'||t.owner===person)}
+function pct(person){const ts=totalTasks(person);const done=ts.filter(t=>state.checks[person][String(t.id)]).length;return{done,total:ts.length,p:ts.length?Math.round(done/ts.length*100):0}}
+function buildFilters(){
+ const cats=[...new Set(state.tasks.map(t=>t.category))];
+ $('filters').innerHTML='<button class="chip active" data-filter="all">ทั้งหมด</button>'+cats.map(c=>'<button class="chip" data-filter="'+c+'">'+c+'</button>').join('');
+ document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()});
+}
+function render(){
+ $('personTitle').textContent=state.person==='alif'?'ของ Alif':'ของ Norida';
+ const list=visibleTasks();$('list').innerHTML='';
+ if(!list.length)$('list').innerHTML='<div class="loading">ไม่มีรายการในหมวดนี้</div>';
+ list.forEach(t=>{const id=String(t.id),done=!!state.checks[state.person][id],d=document.createElement('div');d.className='item'+(done?' done':'');
+ d.innerHTML='<div class="box">'+(done?'✓':'')+'</div><div><div class="title">'+t.title_th+'</div><div class="sub">'+(t.owner==='both'?'สำหรับทั้งคู่':t.owner==='alif'?'สำหรับ Alif':'สำหรับ Norida')+'</div></div><span class="tag">'+catLabel(t.category)+'</span>';
+ d.onclick=()=>toggle(id);$('list').appendChild(d)});
+ const a=pct(state.person),pa=pct('alif'),pn=pct('norida'),all=Math.round((pa.p+pn.p)/2);
+ $('pText').textContent=a.p+'%';$('mini').textContent=a.p+'%';$('ring').style.setProperty('--p',a.p);$('dText').textContent=a.done+' จาก '+a.total+' รายการ';
+ $('overall').textContent=all+'% Ready';$('remaining').textContent=((pa.total-pa.done)+(pn.total-pn.done))+' รายการ';$('bar').style.width=all+'%';
+}
+async function load(){
+ const [{data:tasks,error:taskErr},{data:checks,error:checkErr}]=await Promise.all([
+   supabase.from('umrah_tasks').select('id,title_th,category,owner,sort_order,is_active').eq('is_active',true).order('sort_order'),
+   supabase.from('umrah_checklist').select('traveler,item_id,done')
+ ]);
+ if(taskErr){$('syncStatus').textContent='โหลดรายการไม่สำเร็จ';$('cloud').textContent='Error';return}
+ state.tasks=tasks||[];for(const r of checks||[])if(state.checks[r.traveler])state.checks[r.traveler][String(r.item_id)]=r.done;
+ buildFilters();$('syncStatus').textContent=checkErr?'โหลดสถานะบางส่วนไม่ได้':'Supabase connected';$('cloud').textContent=checkErr?'Partial':'Synced';render()
+}
+async function sync(person,id,done){
+ const {error}=await supabase.from('umrah_checklist').upsert({traveler:person,item_id:id,done,updated_at:new Date().toISOString()},{onConflict:'traveler,item_id'});
+ $('syncStatus').textContent=error?'Sync error':'Synced';
+}
+async function toggle(id){state.checks[state.person][id]=!state.checks[state.person][id];render();await sync(state.person,id,state.checks[state.person][id])}
+document.querySelectorAll('.traveler').forEach(b=>b.onclick=()=>{state.person=b.dataset.person;document.querySelectorAll('.traveler').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('reset').onclick=async()=>{state.checks[state.person]={};render();const {error}=await supabase.from('umrah_checklist').delete().eq('traveler',state.person);$('syncStatus').textContent=error?'Sync error':'Synced'};
+$('essentials').onclick=async()=>{for(const t of totalTasks(state.person).slice(0,5)){const id=String(t.id);state.checks[state.person][id]=true;await sync(state.person,id,true)}render()};
+$('toggle').onclick=()=>document.body.classList.toggle('laser-off');
+const dep=new Date('2026-10-14T00:00:00+07:00'),days=Math.max(0,Math.ceil((dep-new Date())/86400000));$('days').textContent=days+' วัน';
+load();
+</script>
+</body>
+</html>
